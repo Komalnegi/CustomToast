@@ -37,15 +37,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
         switch(id){
             case R.id.btn_success:
-                toastItem.showSuccessToast(this);
+                toastItem.showSuccessToast(this,"Success Message");
                 break;
 
             case R.id.btn_error:
-                toastItem.showErrorToast(this);
+                toastItem.showErrorToast(this,"Error Message");
                 break;
 
             case R.id.btn_warning:
-                toastItem.showWarningError(this);
+                toastItem.showWarningError(this,"Warning Message");
                 break;
 
         }

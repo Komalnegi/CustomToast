@@ -17,6 +17,7 @@ import com.customtoastlibrary.R;
  */
 
 public class ToastItem {
+    private static ToastItem toastItem;
     private final String toastName;
     private final int toastDuration;
     private final Gravity toastGravity;
@@ -51,12 +52,12 @@ public class ToastItem {
         }
     }
 
-    public void showErrorToast(Context context){
+    public void showErrorToast(Context context , String message ){
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.error_toast, null);
 
         TextView text = (TextView) layout.findViewById(R.id.txt_error__toast);
-        text.setText("Some Error has occurred");
+        text.setText(message);
 
         Toast toast = new Toast(context);
         toast.setDuration(toastDuration);
@@ -64,12 +65,12 @@ public class ToastItem {
         toast.show();
     }
 
-    public void showSuccessToast(Context context){
+    public void showSuccessToast(Context context , String message){
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.success_toast, null);
 
         TextView text = (TextView) layout.findViewById(R.id.txt_success_toast);
-        text.setText("Success");
+        text.setText(message);
 
         Toast toast = new Toast(context);
         toast.setDuration(toastDuration);
@@ -77,12 +78,12 @@ public class ToastItem {
         toast.show();
     }
 
-    public void showWarningError(Context context){
+    public void showWarningError(Context context ,String message){
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.warning_toast, null);
 
         TextView text = (TextView) layout.findViewById(R.id.txt_warning__toast);
-        text.setText("warning");
+        text.setText(message);
 
         Toast toast = new Toast(context);
         toast.setDuration(toastDuration);
